@@ -9,9 +9,10 @@ public class Matchmaker : PunBehaviour {
         PhotonNetwork.ConnectUsingSettings("0.1");
     }
 
-    //Display connection progress while logging player in.
+    //Display connection progress while logging player in and number of players in current room.
     void OnGUI() {
         GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
+        GUILayout.Label("Player Count: " + PhotonNetwork.room.playerCount.ToString());
     }
 
     //Connect to room after successful lobby login.
